@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            background-color: black;
+        }
+
+        .logo {
+            background-image: url(https://t3.ftcdn.net/jpg/02/84/87/88/360_F_284878821_E2nyf8wkMPLWnnn0D7DdgYAv7ngrCQTH.jpg);
+            background-size: 100% 100%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+        }
+
+        .header {
+            width: 95%;
+            margin: 0% auto;
+            background-color: black;
+            color: grey;
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .dn {
+            width: 20%;
+            position: relative;
+            top: -60px;
+            float: right;
+        }
+
+        .dropbtn {
+            text-align: left;
+            background-color: black;
+            color: white;
+            padding: 16px;
+            display: none;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #2980B9;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .navbar {
+            display: flex;
+        }
+
+        .navbar a {
+            color: grey;
+            text-transform: capitalize;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0% 10px;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .right {
+            width: 270px;
+            float: right;
+            margin: 0% auto;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            text-transform: capitalize;
+            line-height: 29px;
+            display: none;
+        }
+
+        .right a {
+            padding: 5px 50px;
+            text-decoration: none;
+            cursor: pointer;
+            filter: drop-shadow(0px 0px 10px grey);
+            color: black;
+            background-color: grey;
+        }
+
+        @media screen and (max-width:725px) {
+            .dropbtn {
+                display: block;
+            }
+
+            .navbar {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="logo"></div>
+            <div class="navbar">
+                <nav><a href="#">home</a></nav>
+                <nav><a href="#">about</a></nav>
+                <nav><a href="#">info</a></nav>
+                <nav><a href="#">contact</a></nav>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="dn">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact">info</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.menu')) {
+                var dropdowns = document.getElementsByClassName('.right');
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
